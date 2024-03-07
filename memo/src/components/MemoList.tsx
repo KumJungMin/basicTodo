@@ -1,6 +1,11 @@
 /** rfce로 react 템플릿 자동 추가 */ 
 
-function MemoList({ memos, onMemoRemove }) {
+interface Props {
+  memos: string[];
+  onMemoRemove: (text: string) => void;
+}
+
+function MemoList({ memos, onMemoRemove }: Props) {
   return (
     <div>
       <ul>

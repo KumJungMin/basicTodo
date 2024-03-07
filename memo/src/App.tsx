@@ -17,13 +17,13 @@ function fetchMemos()  {
 function App() {
   const [memos, setMemos] = useState<string[]>(fetchMemos());
 
-  const addMemo = (memo) => {
+  const addMemo = (memo: string) => {
     localStorage.setItem(memo, memo);
     setMemos((currentMemos) => {
       return [...currentMemos, memo]
     })
   }
-  const removeMemo = (memo) => {
+  const removeMemo = (memo: string) => {
     const result = memos.filter(memoItem =>  memoItem !== memo)
     setMemos(result);
     localStorage.removeItem(memo);

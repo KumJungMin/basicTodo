@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
-function MemoInput({ onMemoAdd }) {
+interface Props {
+  onMemoAdd: (text: string) => void;
+}
+
+function MemoInput({ onMemoAdd }: Props) {
   const [inputText, setInputText] = useState('')
 
-  const handleInput = (event) => {
+  const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setInputText(value);
   }
